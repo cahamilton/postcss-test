@@ -1,0 +1,11 @@
+.potato {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000;
+}
+
+.potato::placeholder {
+  color: brown;
+}
