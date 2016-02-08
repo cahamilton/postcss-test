@@ -7,7 +7,14 @@ var dist = 'dist/build.css';
 
 var css = fs.readFileSync(app);
 
-postcss([autoprefixer])
+var processors = [
+  autoprefixer({
+    browsers: ['> 1%', 'last 2 versions'],
+    cascade: false
+  })
+];
+
+postcss(processors)
   .process(css, {
     from: app,
     to: dist
