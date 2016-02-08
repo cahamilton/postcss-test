@@ -5,11 +5,20 @@
   "main": "index.js",
   "scripts": {
     "compile": "node index.js"
- },
+  },
   "author": "Carl Hamilton <info@carlhamilton.co.uk>",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "postcss": "^5.0.14"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cahamilton/postcss-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cahamilton/postcss-test/issues"
+  },
+  "homepage": "https://github.com/cahamilton/postcss-test#readme"
 }
