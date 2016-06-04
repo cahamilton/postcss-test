@@ -1,13 +1,15 @@
-var fs = require('fs');
-var postcss = require('postcss');
-var autoprefixer = require('autoprefixer');
+const fs = require('fs');
+const path = require('path');
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
 
-var app = 'src/app.css';
-var dist = 'dist/build.css';
+const paths = {};
+paths.app = path.join(__dirname, 'src/app.css');
+paths.dist = path.join(__dirname, 'dist/build.css');
 
-var css = fs.readFileSync(app);
+const css = fs.readFileSync(paths.app);
 
-var processors = [
+const processors = [
   autoprefixer({
     browsers: ['> 1%', 'last 2 versions'],
     cascade: false
@@ -16,9 +18,9 @@ var processors = [
 
 postcss(processors)
   .process(css, {
-    from: app,
-    to: dist
+    from: paths.app,
+    to: paths.dist
   })
-  .then(function(res) {
-    fs.writeFileSync(dist, res.css);
+  .then(res => {
+    fs.writeFileSync(paths.dist, res.css);
   });
